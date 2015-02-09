@@ -1,0 +1,19 @@
+<h1>Welcome To Bukit Nanas!</h1>
+
+<h2>Products</h2>
+
+<%= link_to "Post a New Product", "/products/new" %>
+
+<ul>
+	<% @products.each do |p| %>
+	<li><%= link_to(p) do %>
+  			<p><%= p.name %></p>
+  			<!-- <p><%= p.description %></p>
+  			<p><%= p.price_in_cents %></p> -->
+		<% end %>
+ 	<% end%>
+ 	</li>
+
+</ul>
+
+

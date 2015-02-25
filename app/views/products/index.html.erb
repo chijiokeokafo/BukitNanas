@@ -1,17 +1,14 @@
 <h1>Welcome To Bukit Nanas!</h1>
-
+<%= form_tag products_path, method: :get, authentication: false, id: 'search-form' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
 <h2>Products</h2>
+<div id="products">
+  <%= render @products %>
+</div>
+
 
 <%= link_to "Add a New Product", "/products/new" %>
-
-<ul>
-	<% @products.each do |p| %>
-	<li><%= link_to(p) do %>
-  			<p><%= p.name %> - <%= p.formatted_price %> </p>			
-		<% end %>
- 	<% end%>
- 	</li>
-
-</ul>
 
 

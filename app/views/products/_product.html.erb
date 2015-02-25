@@ -1,5 +1,3 @@
-	<% @products.each do |p| %>
-	<li><%= link_to(p) do %>
-  			<p><%= p.name %> - <%= p.formatted_price %> </p>			
-		<% end %>
- 	<% end%>
+<li><%= link_to(product) do %>
+		<p><%= product.name %> - <%= product.formatted_price %> </p>			
+<% end %>

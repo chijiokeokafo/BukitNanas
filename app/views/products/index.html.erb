@@ -1,6 +1,14 @@
 <h1>Welcome To Bukit Nanas!</h1>
+<p class="userinfo">
+	<% if current_user %>
+		Signed in as <%= current_user.name %>. <%= link_to "Log out", sessions_path("current"), :method => :delete %>
+	<% else %>
+		<%= link_to "Log in", new_sessions_path %> or <%= link_to "Sign up", new_user_path %>
+	<% end %>
+</p>
+	<p><%= link_to "| Home |", products_path %></p>
 <%= form_tag products_path, method: :get, authentication: false, id: 'search-form' do %>
-  <%= text_field_tag :search, params[:search] %>
+  <%= text_field_tag :search, params[:search], :placeholder => "eg: Heuristic!" %>
   <%= submit_tag "Search" %>
 <% end %>
 <h2>Products</h2>

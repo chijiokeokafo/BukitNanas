@@ -5,4 +5,7 @@ $(document).on('ready page:load', function() {
 
 		$.getScript('/products?search=' + searchValue);
 	});
+	$(window).scroll(function() {
+	 ($(window).scrollTop() > $(document).height() - $(window).height() - 50) 
+	});
 });
